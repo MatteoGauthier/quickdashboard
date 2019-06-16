@@ -1,0 +1,42 @@
+.container {
+    padding: 50px;
+}
+
+
+
+.counts {
+    //display: flex;
+    margin: 15px;
+
+    .data-desc {
+        display: inline;
+        font-family: Inter;
+
+        font-size: 18px;
+    }
+
+
+    .circle-data {
+        display: inline;
+        height: 32px;
+        border-radius: 111111px;
+        background-color: rgb(255, 241, 223);
+        font-family: Vision;
+
+        font-size: 24px;
+        padding: 6px 6px 2px 6px;
+
+    }
+
+    #repos-data {
+        background: #B8EAFF;
+    }
+
+    #commits-data {
+        background: #FFA8A8;
+    }
+
+    #fav-data {
+        background: #9DFFC4;
+    }
+}
