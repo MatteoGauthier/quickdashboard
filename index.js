@@ -4,7 +4,7 @@ const axios = require('axios')
 
 const app = express()
 const clientID = '49947e1e13649dccd714'
-const clientSecret = process.env.GH_TOKEN
+const clientSecret = process.env.GH_TOKEN || require('./creditentials.json').githubAppToken
 
 // Root path
 app.use(express.static(__dirname + '/public'))
@@ -27,9 +27,11 @@ app.get('/oauth/redirect', (req, res) => {
     }).then((response) => {
       // Once we get the response, extract the access token from
       // the response body
+      console.log(response)
       const accessToken = response.data.access_token
+      res.cookie('id_token' , accessToken)
       // redirect the user to the welcome page, along with the access token
-      res.redirect(`/?access_token=${accessToken}`)
+      res.redirect(`/`)
     })
   })
 
